@@ -4,6 +4,10 @@
     font-family: "Inter";
 }
 
+a{
+  text-decoration: none;
+}
+
 body {
     background-color: wheat;
     padding: 2rem;
