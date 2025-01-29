@@ -117,13 +117,40 @@ margin-top: 5rem;
 }
 
 .contact-info {
-display: flex;
-width: 100%;
-justify-content: center;
-align-items: center;
-gap: 2rem;
-margin-bottom: 5rem;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 5rem;
+  transition: all 0.5s ease-in-out;
 }
+
+/* Modo flotante */
+.contact-info.floating {
+  position: fixed;
+  top: 50%;
+  right: 2rem;
+  transform: translateY(-50%);
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+  width: auto;
+  z-index: 1000;
+  opacity: 1 !important; /* Asegura que recupere su visibilidad */
+}
+
+/* Ocultamos el globo suavemente cuando vuelve a su posición original */
+.contact-info.hidden {
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+
 .contact-icon {
 display: flex;
 justify-content: center;
