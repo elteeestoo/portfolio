@@ -117,39 +117,44 @@ margin-top: 5rem;
 }
 
 .contact-info {
+  position: fixed; /* Se mantiene en su lugar dentro del diseño inicial */
+  top: 20rem;
+
+  /* transform: translateX(-50%); */
   display: flex;
-  width: 100%;
-  justify-content: center;
+  justify-content: center; /* Alineado normal al inicio */
   align-items: center;
-  gap: 2rem;
-  margin-bottom: 5rem;
-  transition: all 0.5s ease-in-out;
+  gap: 1rem;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  max-width: fit-content;
 }
 
-/* Modo flotante */
+/* Modo flotante cuando info-container desaparece */
 .contact-info.floating {
   position: fixed;
-  top: 50%;
-  right: 2rem;
-  transform: translateY(-50%);
+  width: 5%;
+  top: 5rem;
+  right: 2rem; /* Se mantiene en el borde derecho */
+  left: auto;
+  transform: translateY(0);
   flex-direction: column;
   background: rgba(255, 255, 255, 0.95);
   padding: 1rem;
   border-radius: 10px;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
-  width: auto;
   z-index: 1000;
-  opacity: 1 !important; /* Asegura que recupere su visibilidad */
+  opacity: 1;
 }
 
-/* Ocultamos el globo suavemente cuando vuelve a su posición original */
+/* Ocultar suavemente cuando vuelve a la posición inicial */
 .contact-info.hidden {
   opacity: 0;
   transform: translateY(20px);
   pointer-events: none;
-  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
-
 
 .contact-icon {
 display: flex;
