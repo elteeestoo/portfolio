@@ -12,6 +12,71 @@ body {
   background-color: wheat;
   padding: 2rem;
 }
+
+/* 🔹 Estilo general del header */
+.main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.95);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+/* 🔹 Logo alineado a la izquierda */
+.logo img {
+  margin: 1rem;
+  height: 150px;
+  width: auto;
+}
+
+/* 🔹 Estilos de la navegación */
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  padding-right: 2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-size: 1rem;
+  color: #333;
+  font-weight: 600;
+  transition: color 0.3s ease-in-out;
+}
+
+.nav-links a:hover {
+  color: #ff6600;
+}
+
+/* 🔹 Diseño responsive para móviles */
+@media (max-width: 768px) {
+  .main-header {
+      flex-direction: column;
+      height: auto;
+      padding: 1rem;
+  }
+
+  .logo {
+      margin-bottom: 0.5rem;
+  }
+
+  .nav-links {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .nav-links a {
+      font-size: 1.2rem;
+  }
+}
+
 .container  {
 display: flex;
 flex-direction: column;
@@ -136,7 +201,7 @@ margin-top: 5rem;
 .contact-info.floating {
   position: fixed;
   width: 5%;
-  top: 5rem;
+  top: 6rem;
   right: 2rem; /* Se mantiene en el borde derecho */
   left: auto;
   transform: translateY(0);
